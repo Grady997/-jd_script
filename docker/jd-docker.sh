@@ -64,6 +64,7 @@ fi
 #添加脚本作者助力码
 
 
+wget -q --no-check-certificate https://raw.githubusercontent.com/Grady997/jd_script/main/sample/crontab.list.sample -O $config_path/crontab.list
 if [ $? -ne 0 ]; then
     cancelrun "下载配置文件出错请重试"
 fi
@@ -103,8 +104,7 @@ docker run -dit \
     --hostname jd \
     --restart always \
     --network host \
-    evinedeng/jd:gitee
-
+    evinedeng/jd:github
 log "4.是否安装containrrr/watchtower自动更新Docker容器：\n1) 安装[默认]\n2) 不安装"
 echo -n -e "\e[33m输入您的选择->\e[0m"
 read watchtower
