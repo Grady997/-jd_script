@@ -56,19 +56,14 @@ mkdir -p $config_path
 mkdir -p $log_path
 
 log "2.开始下载配置文件"
-wget -q --no-check-certificate https://github.com/Grady997/jd_script/blob/main/sample/config.sh.sample -O $config_path/config.sh
+wget -q --no-check-certificate https://raw.githubusercontent.com/Grady997/jd_script/main/sample/config.sh.sample -O $config_path/config.sh
 if [ $? -ne 0 ]; then
     cancelrun "下载配置文件出错请重试"
 fi
 
 #添加脚本作者助力码
-#sed -i 's/ForOtherFruit1=""/ForOtherFruit1="3bea619de1814b5688e5504af8c58591@c6d6d910e53040a483e7301f518c03c5@e974332dbff343cf864f6e56c2a5224a@782d9d59e02146b181506fe146af0aab"/g' $config_path/config.sh
-#sed -i 's/ForOtherBean1=""/ForOtherBean1="ckvke3ri7sj4c7u3xbhnnuirk4@a355so2hppyl3on7tb3pjq4ose5ac3f4ijdgqji@qpb2rslaqgfqrqgpyys4ntjufi@kywswt3zvukcfhf7x3zekcigsm"/g' $config_path/config.sh
-#sed -i 's/ForOtherJdFactory1=""/ForOtherJdFactory1="T0085KgxAldCCjVWnYaS5kRrbA@T0165awtF0VIqwO4c1K9CjVWnYaS5kRrbA@T0124qggGEtb9FXXCjVWnYaS5kRrbA@T0105q8yGkJTrQCjVWnYaS5kRrbA"/g' $config_path/config.sh
-#sed -i 's/ForOtherJdzz1=""/ForOtherJdzz1="S5KgxAldC@S5awtF0VIqwO4c1K9@S4qggGEtb9FXX@S5q8yGkJTrQ"/g' $config_path/config.sh
-#sed -i 's/ForOtherJoy1=""/ForOtherJoy1="mGjQUKjeeEI=@9ZEh-gFiuyjFpr0m0MiK7w==@iGRAEiEd8T1nJA1ZYLpP-w==@QPNaobA6Be4="/g' $config_path/config.sh
 
-wget -q --no-check-certificate https://github.com/Grady997/jd_script/blob/main/sample/crontab.list.sample -o $config_path/crontab.list
+
 if [ $? -ne 0 ]; then
     cancelrun "下载配置文件出错请重试"
 fi
